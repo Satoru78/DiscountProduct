@@ -14,6 +14,11 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <DataGrid AutoGenerateColumns="False" Name="ProductsData">
+            <!--<DataGrid.CellStyle>
+                <Style TargetType="Line">
+                    <Setter Property=""></Setter>
+                </Style>
+            </DataGrid.CellStyle>-->
             <DataGrid.Columns>
                 
                 <DataGridTextColumn Header="Название продукта" Binding="{Binding Title}"></DataGridTextColumn>

@@ -22,19 +22,23 @@ namespace DiscountProduct.Views.Pages
     /// </summary>
     public partial class DiscountPage : Page
     {
-        public List<DiscountDate> DiscountDates { get; set; }
-        public DiscountDate DiscountDate { get; set; }
-        public DiscountPage(DiscountDate discountDate)
+        public Product SelectedProduct { get; set; }
+        public DiscountPage(Product product)
         {
             InitializeComponent();
-            DiscountDate = discountDate;
+            SelectedProduct = product;
             this.DataContext = this;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            DiscountDates = Data.pde.DiscountDate.ToList();
-            DiscountDateProduct.ItemsSource = DiscountDates;
+            DiscountDateProduct.ItemsSource = Data.pde.DiscountDate.Where(item => item.ID == SelectedProduct.IDDiscount).ToList();
+           
+        }
+
+        private void BackBth_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }

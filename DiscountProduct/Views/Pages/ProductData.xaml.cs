@@ -36,8 +36,7 @@ namespace DiscountProduct.Views.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            Products = Data.pde.Product.ToList();
-            ProductsData.ItemsSource = Products;
+            ProductsData.ItemsSource = Data.pde.Product.ToList(); ;
         }
 
 
@@ -69,7 +68,11 @@ namespace DiscountProduct.Views.Pages
 
         private void DicsPage_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new DiscountPage(new Model.DiscountDate()));
+            var selectedItem = (Product)ProductsData.SelectedItem;
+            if (selectedItem != null)
+            {
+                NavigationService.Navigate(new DiscountPage(selectedItem));
+            }
         }
     }
 }

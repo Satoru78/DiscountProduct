@@ -16,7 +16,10 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Внимание на данный товар действует ограниченная по времени скидка , успейте его приобрести!" FontSize="20" TextWrapping="Wrap">
         </TextBlock>
-        <DataGrid Grid.Row="1" Name="DiscountDateProduct" FontSize="40">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Button Name="BackBth" Content="Назад" Width="100" Click="BackBth_Click"></Button>
+        </StackPanel>
+        <DataGrid Grid.Row="1" Name="DiscountDateProduct" AutoGenerateColumns="False" FontSize="40">
             <DataGrid.Columns >
                 <DataGridTextColumn Header="Начало" Width="400" Binding="{Binding DateStart}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Конец" Binding="{Binding DateEnd}"></DataGridTextColumn>

@@ -86,6 +86,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelBase.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\PartialProduct.cs" />
     <Compile Include="Model\Product.cs">
       <DependentUpon>ModelBase.tt</DependentUpon>
     </Compile>
